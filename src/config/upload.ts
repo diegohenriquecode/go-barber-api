@@ -10,8 +10,8 @@ export default {
   storage: multer.diskStorage({
     destination: tmpFolder,
     filename(request, file, callback) {
-      const filehash = crypto.randomBytes(10).toString('hex');
-      const fileName = `${filehash}-${file.originalname}`;
+      const fileHash = crypto.randomBytes(10).toString('hex');
+      const fileName = `${fileHash}-${file.originalname}`;
 
       return callback(null, fileName);
     },
